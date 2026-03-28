@@ -15,8 +15,8 @@
 
         body {
             font-family: 'Inter', 'Montserrat', sans-serif;
-            background: linear-gradient(135deg, #0a0a0f 0%, #12121a 100%);
-            color: #FFFFFF;
+            background: #FFFDF7;
+            color: #2C2A2A;
             min-height: 100vh;
             overflow-x: hidden;
             position: relative;
@@ -38,7 +38,7 @@
             position: absolute;
             width: 600px;
             height: 600px;
-            background: radial-gradient(circle, rgba(184, 134, 11, 0.15) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(184, 134, 11, 0.05) 0%, transparent 70%);
             border-radius: 50%;
             animation: floatGlow 20s infinite ease-in-out;
         }
@@ -48,13 +48,13 @@
         .bg-glow-3 { top: 50%; left: 50%; transform: translate(-50%, -50%); width: 800px; height: 800px; animation-delay: 10s; }
 
         @keyframes floatGlow {
-            0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.4; }
-            50% { transform: translate(30px, -30px) scale(1.1); opacity: 0.7; }
+            0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.3; }
+            50% { transform: translate(30px, -30px) scale(1.1); opacity: 0.5; }
         }
 
         .particle {
             position: absolute;
-            background: rgba(184, 134, 11, 0.3);
+            background: rgba(184, 134, 11, 0.15);
             border-radius: 50%;
             pointer-events: none;
             animation: floatParticle 15s infinite linear;
@@ -62,22 +62,9 @@
 
         @keyframes floatParticle {
             0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
-            10% { opacity: 0.6; }
-            90% { opacity: 0.3; }
+            10% { opacity: 0.4; }
+            90% { opacity: 0.2; }
             100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
-        }
-
-        .star {
-            position: absolute;
-            background: white;
-            border-radius: 50%;
-            pointer-events: none;
-            animation: twinkle 3s infinite ease-in-out;
-        }
-
-        @keyframes twinkle {
-            0%, 100% { opacity: 0.2; transform: scale(1); }
-            50% { opacity: 1; transform: scale(1.2); }
         }
 
         /* Container */
@@ -89,7 +76,7 @@
             z-index: 10;
         }
 
-        /* Header Animation */
+        /* Header */
         .header {
             text-align: center;
             margin-bottom: 60px;
@@ -97,7 +84,7 @@
         }
 
         @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-40px); }
+            from { opacity: 0; transform: translateY(-30px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
@@ -115,13 +102,13 @@
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            filter: drop-shadow(0 0 15px rgba(184, 134, 11, 0.5));
+            filter: drop-shadow(0 0 15px rgba(184, 134, 11, 0.2));
             animation: pulseGlow 2s infinite;
         }
 
         @keyframes pulseGlow {
-            0%, 100% { filter: drop-shadow(0 0 10px rgba(184, 134, 11, 0.4)); }
-            50% { filter: drop-shadow(0 0 30px rgba(184, 134, 11, 0.8)); }
+            0%, 100% { filter: drop-shadow(0 0 8px rgba(184, 134, 11, 0.2)); }
+            50% { filter: drop-shadow(0 0 20px rgba(184, 134, 11, 0.4)); }
         }
 
         .logo span {
@@ -144,12 +131,6 @@
             color: transparent;
             margin-bottom: 16px;
             letter-spacing: -1px;
-            animation: textGlow 3s infinite;
-        }
-
-        @keyframes textGlow {
-            0%, 100% { text-shadow: 0 0 20px rgba(184, 134, 11, 0.3); }
-            50% { text-shadow: 0 0 40px rgba(184, 134, 11, 0.6); }
         }
 
         .subtitle {
@@ -159,14 +140,14 @@
             letter-spacing: 1px;
         }
 
-        /* Progress Banner */
+        /* Progress Banner - 70% */
         .progress-banner {
-            background: linear-gradient(135deg, rgba(184, 134, 11, 0.2), rgba(205, 164, 94, 0.1));
+            background: white;
             border-radius: 40px;
-            padding: 32px;
+            padding: 28px 32px;
             margin: 40px 0;
-            border: 1px solid rgba(184, 134, 11, 0.3);
-            backdrop-filter: blur(10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(184, 134, 11, 0.15);
             animation: slideInUp 0.6s ease;
         }
 
@@ -210,7 +191,7 @@
         }
 
         .progress-bar-container {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(184, 134, 11, 0.1);
             border-radius: 60px;
             height: 16px;
             overflow: hidden;
@@ -264,104 +245,111 @@
             color: #B8860B;
         }
 
-        /* 4 Main Benefits - MENCOLOK */
-        .main-benefits {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 24px;
-            margin: 60px 0;
-        }
-
-        .benefit-premium {
-            background: linear-gradient(135deg, rgba(184, 134, 11, 0.15), rgba(205, 164, 94, 0.05));
-            border-radius: 32px;
-            padding: 32px 24px;
-            text-align: center;
-            border: 1px solid rgba(184, 134, 11, 0.3);
-            backdrop-filter: blur(10px);
-            transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-            animation: floatIn 0.6s ease backwards;
+        /* SWIPE FEATURES - Box Emas dengan Animasi Mengkilat */
+        .features-swipe-container {
             position: relative;
+            margin: 60px 0;
             overflow: hidden;
         }
 
-        .benefit-premium:nth-child(1) { animation-delay: 0.1s; }
-        .benefit-premium:nth-child(2) { animation-delay: 0.2s; }
-        .benefit-premium:nth-child(3) { animation-delay: 0.3s; }
-        .benefit-premium:nth-child(4) { animation-delay: 0.4s; }
-
-        @keyframes floatIn {
-            from { opacity: 0; transform: translateY(40px); }
-            to { opacity: 1; transform: translateY(0); }
+        .features-wrapper {
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+            padding: 10px 0 20px 0;
         }
 
-        .benefit-premium:hover {
-            transform: translateY(-12px) scale(1.02);
-            border-color: #B8860B;
-            box-shadow: 0 25px 45px rgba(184, 134, 11, 0.2);
+        .features-wrapper::-webkit-scrollbar {
+            display: none;
         }
 
-        .benefit-premium::before {
+        .features-slider {
+            display: flex;
+            gap: 24px;
+            padding: 0 20px;
+        }
+
+        .feature-card {
+            flex: 0 0 calc(25% - 18px);
+            min-width: 280px;
+            background: linear-gradient(135deg, #B8860B, #CDA45E, #E6B17E);
+            border-radius: 32px;
+            padding: 32px 24px;
+            text-align: center;
+            scroll-snap-align: start;
+            transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(184, 134, 11, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .feature-card::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
-            transition: left 0.6s;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            animation: shineGold 3s infinite linear;
         }
 
-        .benefit-premium:hover::before {
-            left: 100%;
+        @keyframes shineGold {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
         }
 
-        .benefit-icon {
+        .feature-card:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 25px 45px rgba(184, 134, 11, 0.5);
+        }
+
+        .feature-icon {
             width: 80px;
             height: 80px;
-            background: linear-gradient(135deg, rgba(184, 134, 11, 0.3), rgba(205, 164, 94, 0.1));
+            background: rgba(255, 255, 255, 0.2);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             margin: 0 auto 20px;
-            animation: iconPulse 2s infinite;
+            backdrop-filter: blur(5px);
+            transition: all 0.3s ease;
         }
 
-        @keyframes iconPulse {
-            0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(184, 134, 11, 0.4); }
-            50% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(184, 134, 11, 0); }
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1);
+            background: rgba(255, 255, 255, 0.3);
         }
 
-        .benefit-icon i {
+        .feature-icon i {
             font-size: 40px;
-            color: #B8860B;
+            color: white;
         }
 
-        .benefit-premium h3 {
-            font-size: 20px;
+        .feature-card h3 {
+            font-size: 22px;
             font-weight: 800;
             margin-bottom: 12px;
-            background: linear-gradient(135deg, #B8860B, #CDA45E);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
+            color: white;
         }
 
-        .benefit-premium p {
+        .feature-card p {
             font-size: 13px;
-            color: #B89A6B;
+            color: rgba(255, 255, 255, 0.9);
             line-height: 1.5;
+            margin-bottom: 12px;
         }
 
-        .hot-badge {
-            position: absolute;
-            top: 12px;
-            right: 12px;
-            background: linear-gradient(135deg, #B8860B, #CDA45E);
-            padding: 4px 10px;
-            border-radius: 20px;
-            font-size: 10px;
+        .hot-badge-gold {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.25);
+            padding: 4px 12px;
+            border-radius: 30px;
+            font-size: 11px;
             font-weight: 700;
             color: white;
             animation: blink 1s infinite;
@@ -369,57 +357,58 @@
 
         @keyframes blink {
             0%, 100% { opacity: 1; }
-            50% { opacity: 0.6; }
+            50% { opacity: 0.7; }
         }
 
-        /* Countdown Timer */
-        .countdown {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border-radius: 80px;
-            padding: 20px 40px;
-            display: inline-flex;
-            gap: 32px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-            margin-top: 32px;
-            border: 1px solid rgba(184, 134, 11, 0.3);
+        /* Swipe Navigation Dots */
+        .swipe-nav {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 20px;
         }
 
-        .countdown-item {
+        .swipe-dot {
+            width: 8px;
+            height: 8px;
+            background: #E8DDCF;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .swipe-dot.active {
+            width: 24px;
+            background: #B8860B;
+            border-radius: 12px;
+        }
+
+        .swipe-indicator {
             text-align: center;
-            position: relative;
-        }
-
-        .countdown-item:not(:last-child)::after {
-            content: ':';
-            position: absolute;
-            right: -20px;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 28px;
-            font-weight: 700;
-            color: #B8860B;
-        }
-
-        .countdown-number {
-            font-size: 32px;
-            font-weight: 800;
-            color: #B8860B;
-            font-family: 'Space Grotesk', monospace;
-        }
-
-        .countdown-label {
-            font-size: 11px;
+            margin-top: 16px;
+            font-size: 12px;
             color: #B89A6B;
-            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
         }
 
-        /* Role Cards */
+        .swipe-indicator i {
+            animation: swipeMove 1.5s infinite;
+        }
+
+        @keyframes swipeMove {
+            0%, 100% { transform: translateX(0); }
+            50% { transform: translateX(5px); }
+        }
+
+        /* Section Title */
         .section-title {
             font-size: 32px;
             font-weight: 800;
             text-align: center;
-            margin: 60px 0 40px;
+            margin-bottom: 40px;
             position: relative;
         }
 
@@ -444,6 +433,7 @@
             border-radius: 3px;
         }
 
+        /* Role Cards */
         .role-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -452,14 +442,14 @@
         }
 
         .role-card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
+            background: white;
             border-radius: 40px;
             padding: 40px 28px;
             text-align: center;
             cursor: pointer;
             transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-            border: 1px solid rgba(184, 134, 11, 0.2);
+            border: 1px solid rgba(184, 134, 11, 0.1);
+            box-shadow: 0 20px 35px rgba(0, 0, 0, 0.03);
             position: relative;
             overflow: hidden;
         }
@@ -482,14 +472,14 @@
 
         .role-card:hover {
             transform: translateY(-12px);
-            border-color: rgba(184, 134, 11, 0.5);
-            box-shadow: 0 30px 50px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 30px 50px rgba(184, 134, 11, 0.1);
+            border-color: rgba(184, 134, 11, 0.25);
         }
 
         .role-icon {
             width: 90px;
             height: 90px;
-            background: linear-gradient(135deg, rgba(184, 134, 11, 0.2), rgba(205, 164, 94, 0.1));
+            background: linear-gradient(135deg, #FDF5E8, #F9EFE0);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -508,27 +498,13 @@
         .role-price { font-size: 32px; font-weight: 800; color: #B8860B; }
         .role-price small { font-size: 14px; font-weight: 500; }
 
-        /* Role Page */
-        .role-page {
-            display: none;
-            animation: fadeInUp 0.5s ease;
-        }
-
-        .role-page.active {
-            display: block;
-        }
-
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(40px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
+        /* Back Button */
         .back-btn {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(184, 134, 11, 0.3);
+            background: white;
+            border: 1px solid rgba(184, 134, 11, 0.2);
             padding: 12px 24px;
             border-radius: 50px;
             cursor: pointer;
@@ -540,16 +516,65 @@
 
         .back-btn:hover {
             transform: translateX(-6px);
-            background: rgba(184, 134, 11, 0.1);
+            background: #FDF5E8;
             border-color: #B8860B;
         }
 
+        /* Role Page */
+        .role-page {
+            display: none;
+            animation: fadeInUp 0.5s ease;
+        }
+
+        .role-page.active {
+            display: block;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Duration Cards */
+        .duration-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            margin: 32px 0;
+        }
+
+        .duration-card {
+            background: white;
+            border-radius: 28px;
+            padding: 28px 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03);
+        }
+
+        .duration-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 35px rgba(0, 0, 0, 0.06);
+        }
+
+        .duration-card.selected {
+            border-color: #B8860B;
+            background: linear-gradient(135deg, #FFF9F0, #FFF5E8);
+            box-shadow: 0 15px 30px rgba(184, 134, 11, 0.08);
+        }
+
+        .duration-icon i { font-size: 40px; color: #B8860B; margin-bottom: 16px; }
+        .duration-name { font-size: 22px; font-weight: 800; margin-bottom: 8px; }
+        .duration-price { font-size: 26px; font-weight: 800; color: #B8860B; margin: 12px 0; }
+        .duration-save { font-size: 11px; color: #2C6E6E; background: rgba(44,110,110,0.08); display: inline-block; padding: 4px 12px; border-radius: 20px; }
+
         /* Custom Duration */
         .custom-duration {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border-radius: 32px;
-            padding: 32px;
+            background: linear-gradient(135deg, #FDF5E8, #FFF5E8);
+            border-radius: 28px;
+            padding: 28px;
             text-align: center;
             margin: 24px 0;
             border: 1px solid rgba(184, 134, 11, 0.2);
@@ -561,33 +586,32 @@
             justify-content: center;
             align-items: center;
             flex-wrap: wrap;
-            margin-top: 20px;
+            margin-top: 16px;
         }
 
         .custom-input-group input {
-            width: 140px;
+            width: 120px;
             padding: 14px;
-            border: 2px solid rgba(184, 134, 11, 0.3);
+            border: 2px solid #E8DDCF;
             border-radius: 28px;
             text-align: center;
             font-size: 18px;
             font-weight: 600;
-            background: rgba(0, 0, 0, 0.3);
-            color: white;
             font-family: 'Inter', sans-serif;
+            transition: all 0.3s ease;
         }
 
         .custom-input-group input:focus {
             outline: none;
             border-color: #B8860B;
-            box-shadow: 0 0 0 3px rgba(184, 134, 11, 0.2);
+            box-shadow: 0 0 0 3px rgba(184, 134, 11, 0.1);
         }
 
         .apply-btn {
-            background: linear-gradient(135deg, #B8860B, #CDA45E);
+            background: #B8860B;
             color: white;
             border: none;
-            padding: 14px 32px;
+            padding: 14px 28px;
             border-radius: 40px;
             font-weight: 700;
             cursor: pointer;
@@ -596,17 +620,18 @@
 
         .apply-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(184, 134, 11, 0.4);
+            background: #CDA45E;
+            box-shadow: 0 8px 20px rgba(184, 134, 11, 0.25);
         }
 
         /* Summary Card */
         .summary-card {
-            background: linear-gradient(135deg, rgba(184, 134, 11, 0.15), rgba(205, 164, 94, 0.05));
+            background: linear-gradient(135deg, #FDF5E8, #FFF5E8);
             border-radius: 32px;
             padding: 32px;
             margin: 32px 0;
             text-align: center;
-            border: 1px solid rgba(184, 134, 11, 0.3);
+            border: 1px solid rgba(184, 134, 11, 0.2);
         }
 
         .summary-price {
@@ -616,19 +641,14 @@
             margin: 12px 0;
         }
 
-        .summary-price span {
-            color: #B8860B;
-            font-size: 14px;
-        }
-
         /* Form Card */
         .form-card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
+            background: white;
             border-radius: 32px;
             padding: 32px;
             margin: 32px 0;
-            border: 1px solid rgba(184, 134, 11, 0.2);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.02);
+            border: 1px solid rgba(184, 134, 11, 0.08);
         }
 
         .form-group {
@@ -637,25 +657,26 @@
 
         .form-group label {
             display: block;
-            font-weight: 600;
+            font-weight: 700;
             margin-bottom: 10px;
+            color: #2C2A2A;
         }
 
         .form-group input {
             width: 100%;
             padding: 16px 20px;
-            border: 2px solid rgba(184, 134, 11, 0.3);
+            border: 2px solid #E8DDCF;
             border-radius: 28px;
-            background: rgba(0, 0, 0, 0.3);
-            color: white;
+            background: #FDF9F2;
             font-family: 'Inter', sans-serif;
             font-size: 15px;
+            transition: all 0.3s ease;
         }
 
         .form-group input:focus {
             outline: none;
             border-color: #B8860B;
-            box-shadow: 0 0 0 3px rgba(184, 134, 11, 0.2);
+            box-shadow: 0 0 0 4px rgba(184, 134, 11, 0.08);
         }
 
         /* Benefits Grid in Role Page */
@@ -667,17 +688,16 @@
         }
 
         .benefits-card-role {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
+            background: white;
             border-radius: 28px;
             padding: 28px;
-            border: 1px solid rgba(184, 134, 11, 0.2);
+            border: 1px solid rgba(184, 134, 11, 0.08);
             transition: all 0.3s ease;
         }
 
         .benefits-card-role:hover {
             transform: translateY(-4px);
-            border-color: #B8860B;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.03);
         }
 
         .benefits-card-role h3 {
@@ -720,42 +740,36 @@
             align-items: center;
             justify-content: center;
             gap: 12px;
-            animation: pulseBtn 2s infinite;
-        }
-
-        @keyframes pulseBtn {
-            0%, 100% { box-shadow: 0 0 0 0 rgba(184, 134, 11, 0.4); }
-            50% { box-shadow: 0 0 0 15px rgba(184, 134, 11, 0); }
         }
 
         .order-btn:hover {
             transform: translateY(-4px);
-            box-shadow: 0 20px 35px rgba(184, 134, 11, 0.5);
+            box-shadow: 0 20px 35px rgba(184, 134, 11, 0.3);
         }
 
         /* Footer */
         .footer {
             text-align: center;
             padding-top: 50px;
-            border-top: 1px solid rgba(184, 134, 11, 0.2);
+            border-top: 1px solid rgba(184, 134, 11, 0.08);
             color: #B89A6B;
             font-size: 12px;
             margin-top: 60px;
         }
 
         @media (max-width: 1000px) {
-            .main-benefits { grid-template-columns: repeat(2, 1fr); }
+            .feature-card { flex: 0 0 calc(50% - 12px); min-width: 260px; }
             .role-grid { grid-template-columns: 1fr; max-width: 450px; margin: 0 auto 60px; }
+            .duration-grid { grid-template-columns: repeat(2, 1fr); }
             .benefits-grid-role { grid-template-columns: 1fr; }
             h1 { font-size: 40px; }
-            .countdown { gap: 20px; padding: 16px 24px; }
-            .countdown-item:not(:last-child)::after { right: -12px; font-size: 20px; }
-            .countdown-number { font-size: 24px; }
         }
 
         @media (max-width: 600px) {
-            .main-benefits { grid-template-columns: 1fr; }
+            .feature-card { flex: 0 0 calc(100% - 20px); min-width: 280px; }
+            .duration-grid { grid-template-columns: 1fr; }
             .container { padding: 20px 16px 60px; }
+            .section-title { font-size: 26px; }
             .progress-steps { flex-direction: column; gap: 8px; align-items: center; }
         }
     </style>
@@ -772,12 +786,6 @@
             </div>
             <h1>PRE-ORDER</h1>
             <div class="subtitle">AI Workspace Premium | All-in-One Tools</div>
-            <div class="countdown" id="countdown">
-                <div class="countdown-item"><div class="countdown-number" id="days">00</div><div class="countdown-label">Hari</div></div>
-                <div class="countdown-item"><div class="countdown-number" id="hours">00</div><div class="countdown-label">Jam</div></div>
-                <div class="countdown-item"><div class="countdown-number" id="minutes">00</div><div class="countdown-label">Menit</div></div>
-                <div class="countdown-item"><div class="countdown-number" id="seconds">00</div><div class="countdown-label">Detik</div></div>
-            </div>
         </div>
 
         <!-- Progress Banner 70% -->
@@ -799,31 +807,49 @@
             </div>
         </div>
 
-        <!-- 4 MAIN BENEFITS - MENCOLOK -->
-        <div class="main-benefits">
-            <div class="benefit-premium">
-                <div class="hot-badge">🔥 HOT</div>
-                <div class="benefit-icon"><i class="fas fa-brain"></i></div>
-                <h3>OxyGPT Uncensored+</h3>
-                <p>AI tanpa sensor • Support NSFW Image • Generate gambar bebas • Chat AI tanpa batas</p>
+        <!-- SWIPE FEATURES - Box Emas dengan Animasi Mengkilat -->
+        <div class="features-swipe-container">
+            <div class="features-wrapper" id="featuresWrapper">
+                <div class="features-slider" id="featuresSlider">
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-brain"></i></div>
+                        <h3>OxyGPT Uncensored+</h3>
+                        <p>AI tanpa sensor • NSFW Image Support • Generate gambar bebas</p>
+                        <span class="hot-badge-gold">🔥 HOT</span>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-film"></i></div>
+                        <h3>OxyNime</h3>
+                        <p>Streaming Anime • Download Episode • Subtitle Indonesia</p>
+                        <span class="hot-badge-gold">🎬 NEW</span>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fab fa-whatsapp"></i></div>
+                        <h3>Bug WA Func Gacor</h3>
+                        <p>Tools WhatsApp premium • Bug terupdate • Anti banned</p>
+                        <span class="hot-badge-gold">⚡ GACOR</span>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-hashtag"></i></div>
+                        <h3>Sosmed Tools</h3>
+                        <p>TikTok, Instagram, YouTube • Downloader • Analytics</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
+                        <h3>Analytics Pro</h3>
+                        <p>Analisis performa konten • Insight mendalam</p>
+                        <span class="hot-badge-gold">📊 NEW</span>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-robot"></i></div>
+                        <h3>AI Assistant</h3>
+                        <p>Asisten AI untuk membantu pekerjaan Anda</p>
+                    </div>
+                </div>
             </div>
-            <div class="benefit-premium">
-                <div class="hot-badge">🎬 NEW</div>
-                <div class="benefit-icon"><i class="fas fa-film"></i></div>
-                <h3>OxyNime</h3>
-                <p>Streaming Anime • Download Episode • Subtitle Indonesia • Update setiap hari</p>
-            </div>
-            <div class="benefit-premium">
-                <div class="hot-badge">⚡ GACOR</div>
-                <div class="benefit-icon"><i class="fab fa-whatsapp"></i></div>
-                <h3>Bug WA Func Gacor</h3>
-                <p>Tools WhatsApp premium • Bug terupdate • Fitur eksklusif • Anti banned</p>
-            </div>
-            <div class="benefit-premium">
-                <div class="hot-badge">📱</div>
-                <div class="benefit-icon"><i class="fas fa-hashtag"></i></div>
-                <h3>Sosmed Tools</h3>
-                <p>TikTok, Instagram, YouTube • Downloader • Analytics • Auto post</p>
+            <div class="swipe-nav" id="swipeNav"></div>
+            <div class="swipe-indicator">
+                <i class="fas fa-arrow-left"></i> Geser untuk melihat fitur lainnya <i class="fas fa-arrow-right"></i>
             </div>
         </div>
 
@@ -856,17 +882,45 @@
         <div id="memberPage" class="role-page">
             <button class="back-btn" onclick="showPage('roleSelectionPage')"><i class="fas fa-arrow-left"></i> Kembali</button>
             
-            <div class="section-title">👤 <span>Pilih Durasi Member</span></div>
+            <div class="section-title">👤 <span>Pilih Paket Member</span></div>
             
+            <!-- Pilihan Durasi Standar -->
+            <div class="duration-grid" id="memberDurationGrid">
+                <div class="duration-card" data-duration="daily" data-price="5000" data-days="1">
+                    <div class="duration-icon"><i class="fas fa-sun"></i></div>
+                    <div class="duration-name">Daily</div>
+                    <div class="duration-price">Rp 5.000</div>
+                    <div class="duration-save">1 hari akses</div>
+                </div>
+                <div class="duration-card" data-duration="weekly" data-price="20000" data-days="7">
+                    <div class="duration-icon"><i class="fas fa-calendar-week"></i></div>
+                    <div class="duration-name">Weekly</div>
+                    <div class="duration-price">Rp 20.000</div>
+                    <div class="duration-save">Hemat Rp 15.000</div>
+                </div>
+                <div class="duration-card" data-duration="monthly" data-price="40000" data-days="30">
+                    <div class="duration-icon"><i class="fas fa-calendar-alt"></i></div>
+                    <div class="duration-name">Monthly</div>
+                    <div class="duration-price">Rp 40.000</div>
+                    <div class="duration-save">Hemat Rp 110.000</div>
+                </div>
+                <div class="duration-card" data-duration="permanent" data-price="50000" data-days="9999">
+                    <div class="duration-icon"><i class="fas fa-infinity"></i></div>
+                    <div class="duration-name">Permanent</div>
+                    <div class="duration-price">Rp 50.000</div>
+                    <div class="duration-save">Akses seumur hidup</div>
+                </div>
+            </div>
+
             <!-- Custom Duration -->
             <div class="custom-duration">
-                <div style="font-weight: 700; font-size: 18px; margin-bottom: 8px;">🎯 Pilih durasi sendiri</div>
-                <div style="font-size: 13px; color: #B89A6B; margin-bottom: 16px;">Harga akan dikonfirmasi via WhatsApp oleh admin</div>
+                <div style="font-weight: 700; font-size: 18px;">🎯 Atau pilih durasi sendiri</div>
+                <div style="font-size: 13px; color: #B89A6B; margin-bottom: 12px;">Harga akan dikonfirmasi via WhatsApp oleh admin</div>
                 <div class="custom-input-group">
-                    <input type="number" id="customDays" placeholder="Jumlah hari" min="1" value="30">
+                    <input type="number" id="customDays" placeholder="Jumlah hari" min="1" value="1">
                     <button id="applyCustomDuration" class="apply-btn">Pilih Durasi</button>
                 </div>
-                <div id="customSelectedDisplay" style="margin-top: 16px; font-size: 14px; color: #B8860B; font-weight: 600;"></div>
+                <div id="customSelectedDisplay" style="margin-top: 12px; font-size: 14px; color: #B8860B; font-weight: 600;"></div>
             </div>
 
             <!-- Benefit Member -->
@@ -879,9 +933,8 @@
                         <li><i class="fas fa-film"></i> OxyNime (Streaming Anime+Download)</li>
                         <li><i class="fab fa-whatsapp"></i> Bug WA Func Gacor</li>
                         <li><i class="fas fa-hashtag"></i> Sosmed Tools (TikTok, IG, YT)</li>
-                        <li><i class="fas fa-photo-video"></i> Media to URL (upload gambar/video)</li>
-                        <li><i class="fas fa-comments"></i> Chat Global & Grup</li>
                         <li><i class="fas fa-headset"></i> Support 24/7 via WhatsApp</li>
+                        <li><i class="fas fa-sync-alt"></i> Update fitur gratis seumur hidup</li>
                     </ul>
                 </div>
                 <div class="benefits-card-role">
@@ -1037,74 +1090,114 @@
     </div>
 
     <script>
-        // Create particles and stars
+        // Create particles
         function createParticles() {
             const container = document.getElementById('bgAnimation');
-            for (let i = 0; i < 50; i++) {
+            for (let i = 0; i < 40; i++) {
                 const particle = document.createElement('div');
                 particle.className = 'particle';
-                const size = Math.random() * 5 + 2;
+                const size = Math.random() * 6 + 2;
                 particle.style.width = `${size}px`;
                 particle.style.height = `${size}px`;
                 particle.style.left = `${Math.random() * 100}%`;
                 particle.style.animationDelay = `${Math.random() * 15}s`;
-                particle.style.animationDuration = `${Math.random() * 10 + 10}s`;
+                particle.style.animationDuration = `${Math.random() * 12 + 10}s`;
                 container.appendChild(particle);
-            }
-            
-            for (let i = 0; i < 100; i++) {
-                const star = document.createElement('div');
-                star.className = 'star';
-                const size = Math.random() * 3 + 1;
-                star.style.width = `${size}px`;
-                star.style.height = `${size}px`;
-                star.style.left = `${Math.random() * 100}%`;
-                star.style.top = `${Math.random() * 100}%`;
-                star.style.animationDelay = `${Math.random() * 5}s`;
-                star.style.animationDuration = `${Math.random() * 3 + 2}s`;
-                container.appendChild(star);
             }
         }
         createParticles();
 
-        // Countdown Timer
-        function updateCountdown() {
-            const target = new Date(2026, 3, 15, 23, 59, 59);
-            const now = new Date();
-            const diff = target - now;
-
-            if (diff <= 0) {
-                document.getElementById('days').innerText = '00';
-                document.getElementById('hours').innerText = '00';
-                document.getElementById('minutes').innerText = '00';
-                document.getElementById('seconds').innerText = '00';
-                return;
+        // SWIPE FEATURES - Initialize slider and dots
+        const wrapper = document.getElementById('featuresWrapper');
+        const slider = document.getElementById('featuresSlider');
+        const navContainer = document.getElementById('swipeNav');
+        const cards = document.querySelectorAll('.feature-card');
+        let currentIndex = 0;
+        
+        // Create dots
+        cards.forEach((_, index) => {
+            const dot = document.createElement('div');
+            dot.classList.add('swipe-dot');
+            if (index === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => {
+                scrollToCard(index);
+            });
+            navContainer.appendChild(dot);
+        });
+        
+        function scrollToCard(index) {
+            const card = cards[index];
+            if (card) {
+                card.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'nearest',
+                    inline: 'center'
+                });
+                updateActiveDot(index);
             }
-
-            document.getElementById('days').innerText = Math.floor(diff / (1000 * 60 * 60 * 24)).toString().padStart(2, '0');
-            document.getElementById('hours').innerText = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString().padStart(2, '0');
-            document.getElementById('minutes').innerText = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
-            document.getElementById('seconds').innerText = Math.floor((diff % (1000 * 60)) / 1000).toString().padStart(2, '0');
         }
-        setInterval(updateCountdown, 1000);
-        updateCountdown();
-
+        
+        function updateActiveDot(index) {
+            const dots = document.querySelectorAll('.swipe-dot');
+            dots.forEach((dot, i) => {
+                if (i === index) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+        }
+        
+        // Detect scroll to update active dot
+        wrapper.addEventListener('scroll', () => {
+            const scrollPosition = wrapper.scrollLeft;
+            const cardWidth = cards[0]?.offsetWidth + 24; // card width + gap
+            const newIndex = Math.round(scrollPosition / cardWidth);
+            if (newIndex !== currentIndex && newIndex >= 0 && newIndex < cards.length) {
+                currentIndex = newIndex;
+                updateActiveDot(currentIndex);
+            }
+        });
+        
         // Page navigation
         function showPage(pageId) {
             document.querySelectorAll('.role-page').forEach(page => page.classList.remove('active'));
             document.getElementById(pageId).classList.add('active');
         }
 
-        // Member - Custom Duration
-        let memberSelectedDays = null;
+        // Member - Duration selection
+        let memberSelectedDuration = null;
+        let memberSelectedPrice = 0;
+        let memberSelectedDays = 0;
 
+        document.querySelectorAll('#memberDurationGrid .duration-card').forEach(card => {
+            card.addEventListener('click', () => {
+                document.querySelectorAll('#memberDurationGrid .duration-card').forEach(c => c.classList.remove('selected'));
+                card.classList.add('selected');
+                
+                memberSelectedDuration = card.getAttribute('data-duration');
+                memberSelectedPrice = parseInt(card.getAttribute('data-price'));
+                memberSelectedDays = parseInt(card.getAttribute('data-days'));
+                
+                document.getElementById('memberSelectedInfo').innerHTML = `${card.querySelector('.duration-name').innerText} - ${memberSelectedDays === 9999 ? 'Seumur hidup' : memberSelectedDays + ' hari'}`;
+                document.getElementById('customSelectedDisplay').innerHTML = '';
+            });
+        });
+
+        // Custom Duration
+        let customSelectedDays = null;
         document.getElementById('applyCustomDuration').addEventListener('click', () => {
             let days = parseInt(document.getElementById('customDays').value);
             if (isNaN(days) || days < 1) days = 1;
             
+            customSelectedDays = days;
+            memberSelectedDuration = 'custom';
             memberSelectedDays = days;
-            document.getElementById('memberSelectedInfo').innerHTML = `${days} hari`;
-            document.getElementById('customSelectedDisplay').innerHTML = `✅ Durasi ${days} hari dipilih. Harga akan dikonfirmasi admin.`;
+            memberSelectedPrice = null;
+            
+            document.querySelectorAll('#memberDurationGrid .duration-card').forEach(c => c.classList.remove('selected'));
+            document.getElementById('memberSelectedInfo').innerHTML = `${days} hari (Custom)`;
+            document.getElementById('customSelectedDisplay').innerHTML = `✅ Durasi ${days} hari dipilih. Harga akan dikonfirmasi admin via WhatsApp.`;
         });
 
         // Format WhatsApp number
@@ -1124,8 +1217,8 @@
             const email = document.getElementById('memberEmail').value.trim();
             let whatsapp = document.getElementById('memberWhatsapp').value.trim();
             
-            if (!memberSelectedDays) {
-                alert('❌ Pilih durasi terlebih dahulu!');
+            if (!memberSelectedDuration) {
+                alert('❌ Pilih paket terlebih dahulu!');
                 return;
             }
             if (!name) { alert('❌ Masukkan nama lengkap!'); return; }
@@ -1134,7 +1227,22 @@
             
             whatsapp = formatWhatsapp(whatsapp);
             
-            const message = `*PRE-ORDER OXYCELL*%0A%0A*📋 DATA DIRI*%0ANama: ${name}%0AEmail: ${email}%0AWhatsApp: ${whatsapp}%0A%0A*🎯 DETAIL ORDER*%0ARole: Member%0ADurasi: ${memberSelectedDays} hari%0A%0A*📌 KETERANGAN*%0AHarga akan dikonfirmasi oleh admin.%0A%0A_Silakan tunggu konfirmasi harga dari admin._%0A%0A*OXYCELL - The Last Cell*`;
+            let packageName = '';
+            let durationText = '';
+            let priceText = '';
+            
+            if (memberSelectedDuration === 'custom') {
+                packageName = `Custom (${memberSelectedDays} hari)`;
+                durationText = `${memberSelectedDays} hari`;
+                priceText = 'Harga akan dikonfirmasi admin';
+            } else {
+                const selectedCard = document.querySelector('#memberDurationGrid .duration-card.selected');
+                packageName = selectedCard?.querySelector('.duration-name')?.innerText || 'Member Package';
+                durationText = memberSelectedDays === 9999 ? 'Seumur hidup' : `${memberSelectedDays} hari`;
+                priceText = `Rp ${memberSelectedPrice.toLocaleString('id-ID')}`;
+            }
+            
+            const message = `*PRE-ORDER OXYCELL*%0A%0A*📋 DATA DIRI*%0ANama: ${name}%0AEmail: ${email}%0AWhatsApp: ${whatsapp}%0A%0A*🎯 DETAIL ORDER*%0ARole: Member%0APaket: ${packageName}%0ADurasi: ${durationText}%0AHarga: ${priceText}%0A%0A_Silakan konfirmasi pembayaran ke admin._%0A%0A*OXYCELL - The Last Cell*`;
             
             window.open(`https://wa.me/62895329700376?text=${message}`, '_blank');
         });
